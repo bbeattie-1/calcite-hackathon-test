@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" src="https://js.arcgis.com/calcite-components/2.10.1/calcite.esm.js"></script>
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.10.1/calcite.css" />
+  <!-- Load Map Components from CDN-->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.30/"></script>
+  <script type="module" src="https://js.arcgis.com/map-components/4.30/arcgis-map-components.esm.js"></script>
+  </head>
+  <style>
+    html,
+    body,
+    #mapEl {
+      padding-left: 490px;
+      margin: 0;
+      height: 100%;
+      width: auto;
+      display: flex;
+    }
+
+    .custom-example-theme {
+            --calcite-color-brand: #6AFF00;
+            --calcite-color-brand-hover: #6AFF00;
+            --calcite-color-brand-press: #6AFF00;
+            --calcite-color-background: #252927;
+            --calcite-color-foreground-1: #282f2c;
+            --calcite-color-foreground-2: #2f3633;
+            --calcite-color-foreground-3: #353b38;
+            --calcite-color-foreground-current: #6AFF00;
+            --calcite-color-info: #38deff;
+            --calcite-color-success: #60fc44;
+            --calcite-color-warning: #ffca38;
+            --calcite-color-danger: #ff3639;
+            --calcite-color-danger-hover: #d93437;
+            --calcite-color-danger-press: #7c1d13;
+            --calcite-color-text-1: #6aff00;
+            --calcite-color-text-2: #6aff00;
+            --calcite-color-text-3: #6AFF00;
+            --calcite-color-text-inverse: #1a1c1b;
+            --calcite-color-text-link: #15e8dd;
+            --calcite-color-border-1: #202422;
+            --calcite-color-border-2: #6AFF00;
+            --calcite-color-border-3: #2b3d33;
+            --calcite-color-border-input: #6AFF00;
+            --background-color: var(--calcite-color-background);
+            --calcite-ui-icon-color: #6aff00;
+        }
+  </style>
+  <body class="calcite-mode-dark custom-example-theme">
+   <calcite-shell content-behind>
+
+    <calcite-navigation slot="header" >
+      <calcite-navigation-logo slot="logo" heading="Recent Grad Idea" icon="education" description="Summer 2024 Hackathon"></calcite-navigation-logo>
+      <calcite-menu slot="content-end" >
+        <calcite-menu-item text="Documentation" icon-start="notepad"></calcite-menu-item>
+      </calcite-menu>
+    </calcite-navigation>
+
+
+    <calcite-shell-panel slot="panel-start" id="shell-panel-start">
+      <calcite-action-bar expand-disabled expanded slot="action-bar">
+        <calcite-action text="Home" icon="home"></calcite-action>
+        <calcite-action text="Work" icon="organization"></calcite-action>
+        <calcite-action text="Places" icon="pins"></calcite-action>
+        <calcite-action-group columns="2" slot="actions-end">
+          <calcite-action text="Run" icon="play"></calcite-action>
+          <calcite-action  text="Cancel" icon="reset"></calcite-action>
+
+        </calcite-action-group>
+      </calcite-action-bar>
+
+      <calcite-panel heading="Configuration">
+        <calcite-block open>
+          <calcite-label>Home Address:
+            <calcite-input-text icon="pin-tear-f" placeholder="Address"></calcite-input-text>
+          </calcite-label>
+          <calcite-label>Preferred Home Commute:
+            <calcite-slider label="Preferred Home Commute" value="30" label-handles ticks="10"></calcite-slider>
+          </calcite-label>
+        </calcite-block>
+
+        <calcite-block open>
+          <calcite-label>Work Address:
+            <calcite-input-text icon="pin-tear-f" placeholder="Address"></calcite-input-text>
+          </calcite-label>
+          <calcite-label>Preferred Work Commute:
+            <calcite-slider label="Preferred Home Commute" value="30" label-handles ticks="10"></calcite-slider>
+          </calcite-label>
+        </calcite-block>
+
+        <calcite-block open>
+          <calcite-label>Interests:
+            <calcite-input-text icon="pin-tear-f" placeholder="Places"></calcite-input-text>
+          </calcite-label>
+          <div style="display: flex; gap: 10px;">
+            <calcite-chip icon-start="pin-tear-f">Whole Foods</calcite-chip>
+            <calcite-chip icon-start="pin-tear-f">Whole Foods</calcite-chip>
+            <calcite-chip icon-start="pin-tear-f">Whole Foods</calcite-chip>
+          </div>
+        </calcite-block>
+
+      </calcite-panel>
+
+
+    </calcite-shell-panel>
+
+    <arcgis-map id="mapEl" item-id="cb1e181c8ce6479382b00f34532bd40e">
+      <arcgis-zoom position="top-right"></arcgis-zoom>
+      <arcgis-legend position="bottom-right"></arcgis-legend>
+      <arcgis-search position="top-left">
+      </arcgis-search>
+    </arcgis-map>
+
+    </calcite-shell>
+   
+  </body>
+</html>

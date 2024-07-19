@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@arcgis/map-components": "^4.30.5",
+    "@esri/calcite-components": "^2.10.1"
+  }
+}
